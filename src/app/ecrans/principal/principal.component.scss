@@ -1,11 +1,14 @@
 main {
   display: flex;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 
   aside {
     display: flex;
     flex-direction: column;
     padding: 0.5em;
+    width: 250px;
 
     .liste-serveur {
       width: 50px;
@@ -26,7 +29,10 @@ main {
           width: 50px;
           height: 50px;
           object-fit: cover;
+          margin-bottom: 10px;
         }
+        display: flex;
+        width: 250px;
       }
     }
 
@@ -45,6 +51,80 @@ main {
         margin-left: 0.5em;
       }
     }
+
+    .salon .actif {
+      display: block;
+      position: absolute;
+      left: 60px;
+      top: 12px;
+    }
+
+    .salon {
+      position: absolute;
+      left: 60px;
+      top: 12px;
+    }
+
+    .creeSalon {
+      padding: 0.5em;
+      border-radius: 7px;
+      background: rgb(1, 177, 1);
+      display: flex;
+    }
+
+    .creeSalon .button-container button {
+      color: white;
+    }
+
+    .creeSalon .button-container button:first-child {
+      background: rgb(0, 141, 0); /* Vert */
+    }
+
+    .creeSalon .button-container button:last-child {
+      background: rgb(141, 0, 0); /* Rouge */
+    }
+
+    .creeSalon p {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 5px;
+
+      .listeSalon {
+        padding: 1em;
+        border-bottom: 2px solid white;
+      }
+    }
+  }
+
+  .messageContainer {
+    flex: 1;
+  }
+
+  .inputContainer {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    margin-left: 5em;
+    width: 70%;
+  }
+
+  .inputContainer input {
+    flex: 1;
+  }
+
+  .blackList {
+    position: absolute;
+    display: flex;
+    background-color: red;
+    top: 10px;
+    border-radius: 10px;
+    align-items: center;
+    left: -131px;
   }
 
   .liste-message {
@@ -57,7 +137,15 @@ main {
     .message {
       display: flex;
       margin: 1em;
+      position: relative;
       border-bottom: 1px solid #585858;
+
+      .contenu {
+        width: 100%;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        max-width: 800px;
+      }
 
       .avatar {
         border-radius: 50%;
